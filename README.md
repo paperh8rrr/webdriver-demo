@@ -1,17 +1,12 @@
 # webdriver-demo-basic
 
-## step-0
-Test using RemoteWebDriver and Standalone Selenium Server
+## step-3
+Test using Page Object abstraction
 
 
 ```sh
-$ bin/sc -u {{USER}} -k {{KEY}}
-
-$ mvn clean test -Dmaven.test.skip=false -Duser={{USER}} -Dkey={{KEY}}
+$ mvn clean test -Dmaven.test.skip=false
 ```
 
-https://code.google.com/p/selenium/wiki/DesiredCapabilities
-
-http://www.seleniumhq.org/docs/03_webdriver.jsp#running-standalone-selenium-server-for-use-with-remotedrivers
-
-https://saucelabs.com/platforms
+https://code.google.com/p/selenium/wiki/PageObjects
+http://martinfowler.com/bliki/PageObject.html
