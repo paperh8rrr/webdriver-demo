@@ -1,7 +1,7 @@
-# webdriver-demo-basic
+# webdriver-demo
 
 ## step-0
-Basic test using the WebDriver Java API
+Test using the WebDriver Java API
 
 
 ```sh
