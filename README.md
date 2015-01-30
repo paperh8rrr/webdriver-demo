@@ -1,12 +1,11 @@
-# webdriver-demo-basic
+# webdriver-demo
 
-## step-3
-Test using Page Object abstraction
+## step-4
+Test using WebDriver PageFactory
 
 
 ```sh
 $ mvn clean test -Dmaven.test.skip=false
 ```
 
-https://code.google.com/p/selenium/wiki/PageObjects
-http://martinfowler.com/bliki/PageObject.html
+https://code.google.com/p/selenium/wiki/PageFactory
