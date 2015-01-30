@@ -12,7 +12,7 @@
         <capabilities.browserName>firefox</capabilities.browserName>
         <capabilities.version>30</capabilities.version>
         <capabilities.platform>ANY</capabilities.platform>
-        <seleniumServerUri>http://hqdusername:dfcecc94-596f-4dfb-8ea1-612f71b09479@ondemand.saucelabs.com:80/wd/hub </seleniumServerUri>
+        <seleniumServerUri>http://localhost:4444/wd/hub</seleniumServerUri>
         <build.number>1</build.number>
         <testng.threadCount>4</testng.threadCount>
     </properties>

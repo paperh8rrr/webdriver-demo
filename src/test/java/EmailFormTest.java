@@ -11,5 +11,12 @@ public class EmailFormTest extends WebDriverTest {
 				.clickComposeButton()
 				.sendEmail("test@example.com", "WebDriver", "Automate everything!")
 				.ensureConfirmation();
+
+
+		driver.get("http://localhost:1080");
+
+		new MailDevPage(driver)
+				.waitForVisibility()
+				.findEmail("WebDriver");
 	}
 }
