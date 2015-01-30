@@ -10,6 +10,5 @@ $ mvn clean test -Dmaven.test.skip=false -Duser={{USER}} -Dkey={{KEY}}
 ```
 
 ### Suggested reading
-- https://code.google.com/p/selenium/wiki/DesiredCapabilities
-- http://www.seleniumhq.org/docs/03_webdriver.jsp#running-standalone-selenium-server-for-use-with-remotedrivers
+- https://docs.saucelabs.com/reference/sauce-connect/
 - https://saucelabs.com/platforms
