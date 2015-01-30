@@ -16,3 +16,4 @@ $  mvn clean test -Dmaven.test.skip=false \
 - https://docs.saucelabs.com/reference/test-configuration/
 - https://github.com/saucelabs/saucerest-java
 - http://w3c.github.io/webdriver/webdriver-spec.html
+- http://maven.apache.org/surefire/maven-surefire-plugin/examples/testng.html
