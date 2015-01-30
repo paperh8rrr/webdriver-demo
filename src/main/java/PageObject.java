@@ -1,7 +1,5 @@
 import com.google.common.base.Function;
 import com.google.common.base.Objects;
-import com.google.common.base.Splitter;
-import com.google.common.collect.Iterables;
 import org.openqa.selenium.By;
 import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebDriver;
@@ -45,13 +43,6 @@ public abstract class PageObject implements SearchContext {
 
 	public <V> V waitFor(Function<WebDriver, V> isTrue) {
 		return waitFor(null, isTrue);
-	}
-
-	protected boolean hasClass(WebElement webElement, String klass) {
-		String classAtrribute = webElement.getAttribute("class");
-		Iterable<String> classes = Splitter.on(" ").omitEmptyStrings().split(classAtrribute);
-
-		return Iterables.contains(classes, klass);
 	}
 
 	public List<WebElement> findElements(By by) {

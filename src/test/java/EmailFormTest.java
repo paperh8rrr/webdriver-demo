@@ -8,14 +8,9 @@ public class EmailFormTest extends WebDriverTest {
 	public void test(String to, String subject, String text) {
 		driver.get("http://localhost:3000");
 
-		EmailForm emailForm = new EmailForm(driver).waitForVisibility();
-
-		emailForm
-				.clickComposeButton();
-
-		Sleeper.THREAD.sleep(2);
-
-		emailForm
+		new EmailForm(driver)
+				.waitForVisibility()
+				.clickComposeButton()
 				.sendEmail(to, subject, text)
 				.ensureConfirmation();
 	}
