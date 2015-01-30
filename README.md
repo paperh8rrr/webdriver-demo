@@ -1,7 +1,7 @@
 # webdriver-demo-basic
 
 ## step-2
-Test using Sauce Labs
+Test using SauceLabs
 
 
 ```sh
