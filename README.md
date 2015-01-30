@@ -4,9 +4,10 @@
 Test using SauceLabs
 
 ```sh
-$ bin/sc -u {{USER}} -k {{KEY}}
-
-$ mvn clean test -Dmaven.test.skip=false -Duser={{USER}} -Dkey={{KEY}}
+$ {{path-to-sauceconnect}}/bin/sc -u {{saucelabs-user}} -k {{saucelabs-access-key}}
+$ mvn clean test -Dmaven.test.skip=false \
+  -Duser={{saucelabs-user}} \
+  -Dkey={{saucelabs-access-key}}
 ```
 
 ### Suggested reading
