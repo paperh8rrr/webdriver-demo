@@ -7,6 +7,6 @@ Test using Page Object abstraction
 $ mvn clean test -Dmaven.test.skip=false
 ```
 
-### Reading material
+### Suggested reading
 - https://code.google.com/p/selenium/wiki/PageObjects
 - http://martinfowler.com/bliki/PageObject.html
