@@ -3,20 +3,14 @@
 <suite name="Test Suite" parallel="tests" thread-count="2">
 
     <test name="Email Form Test">
-        <parameter name="to" value="test@example.com"/>
-        <parameter name="subject" value="WebDriver"/>
-        <parameter name="text" value="Automate everything!"/>
         <classes>
             <class name="EmailFormTest"/>
         </classes>
     </test>
 
-    <test name="Email Form Test - alternate">
-        <parameter name="to" value="test@example.com"/>
-        <parameter name="subject" value="SauceLabs"/>
-        <parameter name="text" value="Use SauceLabs!"/>
+    <test name="About Page Test">
         <classes>
-            <class name="EmailFormTest"/>
+            <class name="AboutPageTest"/>
         </classes>
     </test>
 

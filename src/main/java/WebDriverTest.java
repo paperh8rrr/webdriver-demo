@@ -26,15 +26,13 @@ public abstract class WebDriverTest extends AbstractTestNGSpringContextTests {
 
 	@BeforeClass(alwaysRun = true, dependsOnMethods = "springTestContextPrepareTestInstance")
 	protected void beforeClass(ITestContext context) throws MalformedURLException {
-		String name = this.getClass().getCanonicalName();
-
-		driver = webDriverFactory.createInstance(name);
+		driver = webDriverFactory.createInstance(context.getName());
 	}
 
 	@AfterMethod(alwaysRun = true, dependsOnMethods = "springTestContextAfterTestMethod")
 	protected void afterMethod(ITestResult result) {
 		if (driver instanceof SauceLabsDriver) {
-			((SauceLabsDriver) driver).updateJobInfo("passed", result.isSuccess());
+			((SauceLabsDriver) driver).updateJobInfo("passed", Boolean.valueOf(result.isSuccess()));
 		}
 	}
 

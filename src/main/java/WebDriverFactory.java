@@ -25,7 +25,7 @@ public class WebDriverFactory implements InitializingBean {
 		URL remoteAddress = new URL(seleniumServerUri);
 		RemoteWebDriver driver;
 		if (remoteAddress.getHost().contains("saucelabs")) {
-			driver = new SauceLabsDriver(remoteAddress, desiredCapabilities);
+			driver = new SauceLabsDriverImpl(remoteAddress, desiredCapabilities);
 		} else {
 			driver = new RemoteWebDriver(remoteAddress, desiredCapabilities);
 		}
