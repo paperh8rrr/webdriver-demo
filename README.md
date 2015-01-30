@@ -1,4 +1,4 @@
-# webdriver-demo-basic
+# webdriver-demo
 
 ## step-2
 Test using SauceLabs
