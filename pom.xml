@@ -8,6 +8,24 @@
     <artifactId>webdriver-demo-basic</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <properties>
+        <capabilities.browserName>firefox</capabilities.browserName>
+        <capabilities.version>30</capabilities.version>
+        <capabilities.platform>ANY</capabilities.platform>
+        <seleniumServerUri>http://localhost:4444/wd/hub</seleniumServerUri>
+        <build.number>1</build.number>
+        <testng.threadCount>4</testng.threadCount>
+    </properties>
+
+    <build>
+        <testResources>
+            <testResource>
+                <directory>src/test/resources</directory>
+                <filtering>true</filtering>
+            </testResource>
+        </testResources>
+    </build>
+
     <dependencies>
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
@@ -19,6 +37,31 @@
             <artifactId>testng</artifactId>
             <version>6.8.8</version>
         </dependency>
+        <dependency>
+            <groupId>com.saucelabs</groupId>
+            <artifactId>saucerest</artifactId>
+            <version>1.0.25</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <version>4.0.6.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-beans</artifactId>
+            <version>4.0.6.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>4.0.6.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-tx</artifactId>
+            <version>4.0.6.RELEASE</version>
+            <scope>runtime</scope>
+        </dependency>
     </dependencies>
-
 </project>
