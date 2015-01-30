@@ -1,7 +1,0 @@
-language: java
-
-jdk:
-    - oraclejdk7
-
-script:
-    - mvn clean test -Dmaven.test.skip=false
