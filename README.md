@@ -1,4 +1,4 @@
-# webdriver-demo-basic
+# webdriver-demo
 
 ## step-3
 Test using Page Object abstraction
