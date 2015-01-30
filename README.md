@@ -12,3 +12,7 @@ $  mvn clean test -Dmaven.test.skip=false \
 ```
 
 ### Suggested reading
+- http://testng.org/doc/documentation-main.html
+- https://docs.saucelabs.com/reference/test-configuration/
+- https://github.com/saucelabs/saucerest-java
+- http://w3c.github.io/webdriver/webdriver-spec.html

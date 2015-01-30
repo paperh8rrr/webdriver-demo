@@ -1,9 +1,11 @@
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 public class EmailFormTest extends WebDriverTest {
 
 	@Test
-	public void test() {
+	@Parameters({ "to", "subject", "text" })
+	public void test(String to, String subject, String text) {
 		driver.get("http://localhost:3000");
 
 		EmailForm emailForm = new EmailForm(driver).waitForVisibility();
@@ -14,7 +16,7 @@ public class EmailFormTest extends WebDriverTest {
 		Sleeper.THREAD.sleep(2);
 
 		emailForm
-				.sendEmail("test@example.com", "WebDriver", "Automate everything!")
+				.sendEmail(to, subject, text)
 				.ensureConfirmation();
 	}
 }

@@ -24,6 +24,19 @@
                 <filtering>true</filtering>
             </testResource>
         </testResources>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <parallel>tests</parallel>
+                    <threadCount>2</threadCount>
+                    <suiteXmlFiles>
+                        <suiteXmlFile>src/test/resources/suite.xml</suiteXmlFile>
+                    </suiteXmlFiles>
+                </configuration>
+            </plugin>
+        </plugins>
     </build>
 
     <dependencies>
