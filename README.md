@@ -12,6 +12,6 @@ $ java -jar selenium-server-standalone-2.44.0.jar
 $ mvn clean test -Dmaven.test.skip=false
 ```
 
-https://code.google.com/p/selenium/wiki/DesiredCapabilities
-
-http://www.seleniumhq.org/docs/03_webdriver.jsp#running-standalone-selenium-server-for-use-with-remotedrivers
+### Reading material
+- https://code.google.com/p/selenium/wiki/DesiredCapabilities
+- http://www.seleniumhq.org/docs/03_webdriver.jsp#running-standalone-selenium-server-for-use-with-remotedrivers
