@@ -1,6 +1,6 @@
-# webdriver-demo-basic
+# webdriver-demo
 
-## step-0
+## step-1
 Test using RemoteWebDriver and Standalone Selenium Server
 
 
@@ -9,7 +9,7 @@ $ curl -OL http://selenium-release.storage.googleapis.com/2.44/selenium-server-s
 
 $ java -jar selenium-server-standalone-2.44.0.jar
 
-$ mvn test -Dmaven.test.skip=false
+$ mvn clean test -Dmaven.test.skip=false
 ```
 
 https://code.google.com/p/selenium/wiki/DesiredCapabilities
