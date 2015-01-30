@@ -20,9 +20,17 @@ public class EmailFormTest {
 
 	@BeforeMethod
 	public void beforeMethod() throws MalformedURLException {
-		DesiredCapabilities capabilities = DesiredCapabilities.firefox();
-		URL remoteAddress = new URL("http://localhost:4444/wd/hub");
-		driver = new RemoteWebDriver(remoteAddress, capabilities);
+		String user = System.getProperty("user");
+		String key = System.getProperty("key");
+
+		DesiredCapabilities caps = DesiredCapabilities.chrome();
+		caps.setCapability("platform", Platform.XP);
+		caps.setCapability("version", "29");
+
+		String url = String.format("http://%s:%s@ondemand.saucelabs.com:80/wd/hub", user, key);
+		URL remoteAddress = new URL(url);
+
+		driver = new RemoteWebDriver(remoteAddress, caps);
 	}
 
 	@AfterMethod
