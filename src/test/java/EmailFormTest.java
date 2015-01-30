@@ -12,7 +12,6 @@ public class EmailFormTest extends WebDriverTest {
 				.sendEmail("test@example.com", "WebDriver", "Automate everything!")
 				.ensureConfirmation();
 
-
 		driver.get("http://localhost:1080");
 
 		new MailDevPage(driver)
