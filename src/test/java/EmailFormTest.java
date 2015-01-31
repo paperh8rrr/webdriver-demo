@@ -22,10 +22,15 @@ public class EmailFormTest {
 	public void test() {
 		driver.get("http://localhost:3000");
 
+		WelcomeScreen welcomeScreen = new WelcomeScreen(driver);
+		welcomeScreen.waitForVisibility();
+		welcomeScreen.clickComposeButton();
+		
 		EmailForm emailForm = new EmailForm(driver);
-
-		emailForm.clickComposeButton();
+		emailForm.waitForVisibility();
 		emailForm.sendEmail("test@example.com", "WebDriver", "Automate everything!");
-		emailForm.ensureConfirmation();
+		
+		FeedbackView feedbackView = new FeedbackView(driver);
+		feedbackView.waitForVisibility();
 	}
 }
