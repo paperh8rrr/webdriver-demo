@@ -6,9 +6,8 @@ import org.springframework.test.context.support.DependencyInjectionTestExecution
 import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
 import org.testng.ITestContext;
 import org.testng.ITestResult;
-import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 
 import java.net.MalformedURLException;
 
@@ -24,20 +23,16 @@ public abstract class WebDriverTest extends AbstractTestNGSpringContextTests {
 	@Autowired
 	private WebDriverFactory webDriverFactory;
 
-	@BeforeClass(alwaysRun = true, dependsOnMethods = "springTestContextPrepareTestInstance")
-	protected void beforeClass(ITestContext context) throws MalformedURLException {
+	@BeforeMethod(alwaysRun = true)
+	protected void beforeMethod(ITestContext context) throws MalformedURLException {
 		driver = webDriverFactory.createInstance(context.getName());
 	}
 
-	@AfterMethod(alwaysRun = true, dependsOnMethods = "springTestContextAfterTestMethod")
+	@AfterMethod(alwaysRun = true)
 	protected void afterMethod(ITestResult result) {
 		if (driver instanceof SauceLabsDriver) {
 			((SauceLabsDriver) driver).updateJobInfo("passed", Boolean.valueOf(result.isSuccess()));
 		}
-	}
-
-	@AfterClass(alwaysRun = true, dependsOnMethods = "springTestContextAfterTestClass")
-	protected void afterClass() {
 		driver.quit();
 	}
 }

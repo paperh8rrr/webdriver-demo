@@ -37,6 +37,8 @@ public class EmailForm extends PageObject {
 	
 	public EmailForm clickBackButton() {
 		backButton.click();
+		
+		return this;
 	}
 
 	public EmailForm sendEmail(String to, String subject, String text) {
