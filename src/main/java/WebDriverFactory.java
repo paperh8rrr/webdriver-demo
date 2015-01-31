@@ -23,18 +23,17 @@ public class WebDriverFactory implements InitializingBean {
 		desiredCapabilities.setCapability("name", name);
 
 		URL remoteAddress = new URL(seleniumServerUri);
+		
 		RemoteWebDriver driver;
+		
 		if (remoteAddress.getHost().contains("saucelabs")) {
 			driver = new SauceLabsDriverImpl(remoteAddress, desiredCapabilities);
 		} else {
 			driver = new RemoteWebDriver(remoteAddress, desiredCapabilities);
 		}
 
-		driver.setFileDetector(new LocalFileDetector());
-		driver.manage().window().maximize();
-		driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-
+		ThreadLocal<WebDriver> webDriverThreadLocal = new ThreadLocal<WebDriver>();
+		webDriverThreadLocal.set(driver);
 		return ThreadGuard.protect(driver);
 	}
 

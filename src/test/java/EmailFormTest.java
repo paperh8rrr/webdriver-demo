@@ -3,19 +3,22 @@ import pageobjects.EmailForm;
 import pageobjects.FeedbackView;
 import pageobjects.WelcomeScreen;
 
+import java.util.UUID;
+
 public class EmailFormTest extends WebDriverTest {
 
 	@Test
-	public void test() {
+	public void test_workflow() {
 		driver.get("http://localhost:3000");
 
 		new WelcomeScreen(driver)
 				.waitForVisibility()
 				.clickComposeButton();
-		
+
+		String uuid = UUID.randomUUID().toString();
 		new EmailForm(driver)
 				.waitForVisibility()
-				.sendEmail("test@example.com", "WebDriver", "Automate everything!");
+				.sendEmail("test@example.com", uuid, "Automate everything!");
 		
 		new FeedbackView(driver)
 				.waitForVisibility();
@@ -24,6 +27,22 @@ public class EmailFormTest extends WebDriverTest {
 
 		new MailDevPage(driver)
 				.waitForVisibility()
-				.findEmail("WebDriver");
+				.findEmail(uuid);
+	}
+
+	@Test
+	public void test_back_button() {
+		driver.get("http://localhost:3000");
+
+		new WelcomeScreen(driver)
+				.waitForVisibility()
+				.clickComposeButton();
+
+		new EmailForm(driver)
+				.waitForVisibility()
+				.clickBackButton();
+
+		new WelcomeScreen(driver)
+				.waitForVisibility();
 	}
 }

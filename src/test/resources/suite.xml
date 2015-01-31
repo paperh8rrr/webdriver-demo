@@ -4,14 +4,13 @@
 
     <test name="Email Form Test">
         <classes>
-            <class name="EmailFormTest"/>
+            <class name="EmailFormTest" />
         </classes>
     </test>
 
-    <test name="About Page Test">
+    <test name="Some Other Test">
         <classes>
-            <class name="AboutPageTest"/>
+            <class name="SomeOtherTest" />
         </classes>
     </test>
-
 </suite>
