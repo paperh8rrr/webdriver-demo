@@ -1,3 +1,5 @@
+package pageobjects;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -7,14 +9,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 public class EmailForm extends PageObject {
 
 	private static final By LOCATOR = By.className("email-form");
-
-	private static interface ViewState {
-		By COMPOSE = By.className("compose-mode");
-		By SUCCESS = By.className("success-mode");
-	}
-
-	@FindBy(className = "compose-button")
-	private WebElement composeButton;
 
 	@FindBy(name = "to")
 	private WebElement toField;
@@ -28,6 +22,9 @@ public class EmailForm extends PageObject {
 	@FindBy(className = "send-button")
 	private WebElement sendButton;
 
+	@FindBy(className = "back-button")
+	private WebElement backButton;
+
 	public EmailForm(WebDriver driver) {
 		super(driver);
 	}
@@ -37,13 +34,9 @@ public class EmailForm extends PageObject {
 
 		return this;
 	}
-
-	public EmailForm clickComposeButton() {
-		composeButton.click();
-
-		waitFor(ExpectedConditions.visibilityOfElementLocated(ViewState.COMPOSE));
-
-		return this;
+	
+	public EmailForm clickBackButton() {
+		backButton.click();
 	}
 
 	public EmailForm sendEmail(String to, String subject, String text) {
@@ -52,12 +45,6 @@ public class EmailForm extends PageObject {
 		textField.sendKeys(text);
 
 		sendButton.click();
-
-		return this;
-	}
-
-	public EmailForm ensureConfirmation() {
-		waitFor(ExpectedConditions.visibilityOfElementLocated(ViewState.SUCCESS));
 
 		return this;
 	}

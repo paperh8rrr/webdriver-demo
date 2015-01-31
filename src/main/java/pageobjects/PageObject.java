@@ -1,3 +1,5 @@
+package pageobjects;
+
 import com.google.common.base.Function;
 import com.google.common.base.Objects;
 import org.openqa.selenium.By;
