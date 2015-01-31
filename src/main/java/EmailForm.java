@@ -11,18 +11,12 @@ public class EmailForm {
 	public EmailForm(WebDriver driver) {
 		this.driver = driver;
 		this.wait = new WebDriverWait(driver, 5);
+	}
 
+	public void waitForVisibility() {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("email-form")));
 	}
-
-	public void clickComposeButton() {
-		WebElement composeButton = driver.findElement(By.className("compose-button"));
-
-		composeButton.click();
-
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("compose-mode")));
-	}
-
+	
 	public void sendEmail(String to, String subject, String text) {
 		WebElement toField = driver.findElement(By.name("to"));
 		WebElement subjectField = driver.findElement(By.name("subject"));
@@ -34,9 +28,5 @@ public class EmailForm {
 		textField.sendKeys(text);
 
 		sendButton.click();
-	}
-
-	public void ensureConfirmation() {
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("success-mode")));
 	}
 }
