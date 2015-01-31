@@ -44,17 +44,17 @@ public class EmailFormTest {
 
 		WebDriverWait wait = new WebDriverWait(driver, 5);
 
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("email-form")));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("welcome-screen")));
 
 		driver.findElement(By.className("compose-button")).click();
 
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("compose-mode")));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("email-form")));
 
 		driver.findElement(By.name("to")).sendKeys("test@example.com");
 		driver.findElement(By.name("subject")).sendKeys("WebDriver");
 		driver.findElement(By.name("text")).sendKeys("Automate everything!");;
 		driver.findElement(By.className("send-button")).click();
 
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("success-mode")));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("feedback-view")));
 	}
 }
