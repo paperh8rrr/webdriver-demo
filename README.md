@@ -7,6 +7,8 @@ Test using SauceLabs
 $ {{path-to-sauceconnect}}/bin/sc \
     -u {{saucelabs-user}} \
     -k {{saucelabs-access-key}}
+```
+```sh
 $ mvn clean test -Dmaven.test.skip=false \
   -Duser={{saucelabs-user}} \
   -Dkey={{saucelabs-access-key}}
